@@ -1,11 +1,26 @@
-export default function Loading() {
-  return (
-    <section id="post-message-skeleton" className="animate-pulse opacity-20">
-      <div className="text-xl h-4 bg-gray-200 rounded-md w-48"></div>
+export default function Loading({length = 1}: {length: number}) {
+  const loadingArr = Array(length)
+    .fill("")
+    .map((_, idx) => {
+      return (
+        <div
+          className="message rounded-md p-8 flex flex-col gap-8 animate-pulse opacity-10 bg-gray-500"
+          key={idx}
+        >
+          <div className="flex justify-between items-center">
+            <p className="flex items-center font-semibold gap-2 text-lg">
+              <span className="rounded-md bg-gray-200"></span>
+              <span>{"->"}</span>
+              <span className="rounded-md bg-gray-200"></span>
+            </p>
 
-      <div
-        className="mt-8 h-48 bg-gray-200 rounded-md"
-      ></div>
-    </section>
-  );
+            <p className="text-neutral-400 text-sm rounded-md bg-gray-200"></p>
+          </div>
+
+          <p className="rounded-md bg-gray-200">{}</p>
+        </div>
+      );
+    });
+
+  return <>{loadingArr}</>;
 }
