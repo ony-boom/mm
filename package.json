@@ -6,9 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "db:migrate": "pnpm dotenv -e .env -- pnpm prisma migrate deploy",
-    "prestart": "pnpm run db:migrate"
+    "lint": "next lint"
   },
   "dependencies": {
     "@prisma/client": "4.14.0",
@@ -29,6 +27,7 @@
     "wretch": "^2.5.2"
   },
   "devDependencies": {
+    "dotenv-cli": "^7.2.1",
     "prettier": "^2.8.8"
   }
 }
