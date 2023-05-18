@@ -1,7 +1,13 @@
 version: '3.1'
-
 services:
-
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
   db:
     image: postgres:15-alpine
     restart: always
@@ -12,7 +18,6 @@ services:
       - "5432:5432"
     volumes:
       - pgData:/var/lib/postgresql/data
-
 
 volumes:
   pgData:
