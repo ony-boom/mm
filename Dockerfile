@@ -10,8 +10,8 @@ COPY . .
 RUN pnpm install
 RUN pnpm build
 
-ENV PORT=8573
+ENV PORT=3000
 
-EXPOSE 8573
+EXPOSE 3000
 
 CMD [ "pnpm", "start" ]
